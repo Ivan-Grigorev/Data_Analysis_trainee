@@ -1,0 +1,26 @@
+id                                102599
+NAME                              102349
+host id                           102599
+host_identity_verified            102310
+host name                         102193
+neighbourhood group               102570
+neighbourhood                     102583
+lat                               102591
+long                              102591
+country                           102067
+country code                      102468
+instant_bookable                  102494
+cancellation_policy               102523
+room type                         102599
+Construction year                 102385
+price                             102352
+service fee                       102326
+minimum nights                    102190
+number of reviews                 102416
+last review                        86706
+reviews per month                  86720
+review rate number                102273
+calculated host listings count    102280
+availability 365                  102151
+house_rules                        50468
+license                                2
