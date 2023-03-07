@@ -9,9 +9,9 @@ pd.set_option('display.width', 1000)
 pd.set_option('display.max_rows', 2000)
 pd.set_option('display.max_columns', 30)
 
-data = pd.concat([pd.read_csv('UKR_refugee_by_countries.csv'),
-                  pd.read_csv('UKR_refugee_by_countries(1).csv'),
-                  pd.read_csv('UKR_refugee_by_countries(2).csv')])
+data = pd.concat([pd.read_csv('CSV/UKR_refugee_by_countries.csv'),
+                  pd.read_csv('CSV/UKR_refugee_by_countries(1).csv'),
+                  pd.read_csv('CSV/UKR_refugee_by_countries(2).csv')])
 
 start_date = str(datetime(year=2022, month=2, day=24))
 end_date = str(datetime(year=datetime.now().year, month=datetime.now().month, day=datetime.now().day))
