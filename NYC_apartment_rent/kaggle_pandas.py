@@ -8,7 +8,7 @@ from kaggle_pd_plt import *
 pd.set_option('display.max_columns', 30)
 pd.set_option('display.width', 1000)
 
-data_rent = pd.read_csv('house_rent_dataset.csv')
+data_rent = pd.read_csv('CSV/house_rent_dataset.csv')
 data_airbnb = pd.read_csv('CSV/Airbnb_Open_Data.csv', low_memory=False)
 
 """

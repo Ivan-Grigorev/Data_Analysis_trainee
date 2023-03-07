@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 pd.set_option("display.max_columns", 30)
 pd.set_option("display.width", 1000)
 
-data_airbnb = pd.read_csv("CSV/Airbnb_Open_Data.csv", low_memory=False)
+data_airbnb = pd.read_csv("../CSV/Airbnb_Open_Data.csv", low_memory=False)
 
 sorted_data = data_airbnb[data_airbnb["price"] != "NaN"].drop_duplicates(subset="price")
 

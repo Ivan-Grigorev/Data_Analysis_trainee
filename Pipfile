@@ -4,17 +4,19 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pandas = "*"
-numpy = "*"
-matplotlib = "*"
-lxml = "*"
-html5lib = "*"
 beautifulsoup4 = "*"
-pytest = "*"
-xarray = "*"
-scipy = "*"
-pyspark = "*"
 faker = "*"
+geopy = "*"
+html5lib = "*"
+lxml = "*"
+matplotlib = "*"
+numpy = "*"
+pandas = "*"
+pytest = "*"
+pyspark = "*"
+scipy = "*"
+xarray = "*"
+openai = "*"
 
 [dev-packages]
 
