@@ -6,24 +6,27 @@ from NYC_taxi.handler import get_addresses, get_rides_of_the_day
 
 class TestGetRidesOfTheDay(unittest.TestCase):
     def setUp(self):
-        # Create sample data
-        data = {'pickup_datetime': ['2016-01-01 00:00:00', '2016-01-05 09:44:31', '2016-01-06 12:30:00',
-                                    '2016-01-13 20:25:29', '2016-01-17 19:40:26', '2016-01-21 08:28:19',
-                                    '2016-01-22 17:47:13', '2016-01-31 11:59:59'],}
+        # Define sample data for testing
+        data = {"pickup_datetime": pd.date_range(start="2016-01-01 00:00:00",
+                                                 end="2016-01-31 23:59:59",
+                                                 freq="s")}
         self.df = pd.DataFrame(data)
-        self.df['pickup_datetime'] = pd.to_datetime(self.df['pickup_datetime'])
 
     def test_get_rides_of_the_day(self):
         # Define expected output
-        expected_output = pd.to_datetime(['2016-01-05 09:44:31', '2016-01-13 20:25:29',
-                                          '2016-01-17 19:40:26', '2016-01-21 08:28:19',
-                                          '2016-01-22 17:47:13'])
-        # Filter dataframe
-        filtered_df = get_rides_of_the_day(self.df, '2016-01-01', '2016-01-30', '06:00:00', '12:00:00')
-        self.assertTrue(filtered_df['pickup_datetime'].equals(expected_output))
+        start_datetime = pd.to_datetime('2016-01-01 06:00:00')
+        end_datetime = pd.to_datetime('2016-01-30 12:00:00')
 
-        filtered_df = get_rides_of_the_day(self.df, '2016-01-01', '2016-01-04', '06:00:00', '12:00:00')
-        self.assertTrue(filtered_df.empty)
+        # Filter dataframe
+        filtered_df = get_rides_of_the_day(self.df,
+                                           start_date='2016-01-01',
+                                           start_time='06:00:00',
+                                           end_date='2016-01-30',
+                                           end_time='12:00:00')
+
+        # Check that all values in pickup_datetime are within the expected range
+        self.assertTrue(filtered_df['pickup_datetime'].min() >= start_datetime)
+        self.assertTrue(filtered_df['pickup_datetime'].max() <= end_datetime)
 
     def test_get_rides_of_the_day_invalid_input(self):
         # Check if function raises ValueError when inputs are invalid

@@ -76,9 +76,9 @@ class NYCTaxiAnalysis:
 
 
 if __name__ == "__main__":
-    nyc_taxi_analysis = NYCTaxiAnalysis("CSV/nyc_taxi_trip_duration.csv",
+    nyc_taxi_analysis = NYCTaxiAnalysis(dataset="../CSV/nyc_taxi_trip_duration.csv",
                                         date_from="2016-01-01",
-                                        date_to="2016-01-30")
+                                        date_to="2016-01-30",)
 
     # nyc_taxi_analysis.pickup_dropoff_addresses()
     print(nyc_taxi_analysis.rides_of_the_day())

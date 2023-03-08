@@ -2,7 +2,7 @@ from geopy.geocoders import Nominatim
 import pandas as pd
 
 
-def get_rides_of_the_day(data, start_date: None, start_time: str, end_date: None, end_time: str):
+def get_rides_of_the_day(data, start_date: str, start_time: str, end_date: str, end_time: str):
     try:
         # Convert pickup_datetime column to datetime dtype
         data["pickup_datetime"] = pd.to_datetime(data["pickup_datetime"], format="%Y-%m-%d %H:%M:%S")
@@ -15,7 +15,7 @@ def get_rides_of_the_day(data, start_date: None, start_time: str, end_date: None
             (data["pickup_datetime"].dt.time <= pd.to_datetime(end_time).time())
         ]
 
-        return result.sort_values(by="pickup_datetime", ascending=True)
+        return result.sort_values(by="pickup_datetime", ascending=True).head(40)
 
     except AttributeError as err:
         # Display error message in error case
