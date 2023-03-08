@@ -4,7 +4,7 @@ import pandas as pd
 
 def get_rides_of_the_day(data, start_date: str, start_time: str, end_date: str, end_time: str):
     try:
-        # Convert pickup_datetime column to datetime dtype
+        # Convert pickup_datetime column to datetime dtypes
         data["pickup_datetime"] = pd.to_datetime(data["pickup_datetime"], format="%Y-%m-%d %H:%M:%S")
 
         # Filter DataFrame by date and time range
@@ -15,7 +15,7 @@ def get_rides_of_the_day(data, start_date: str, start_time: str, end_date: str, 
             (data["pickup_datetime"].dt.time <= pd.to_datetime(end_time).time())
         ]
 
-        return result.sort_values(by="pickup_datetime", ascending=True).head(40)
+        return result.sort_values(by="pickup_datetime", ascending=True)
 
     except AttributeError as err:
         # Display error message in error case
@@ -33,6 +33,8 @@ def get_addresses(pickup_coordinates: [tuple], dropoff_coordinates: [tuple]):
 
 
 """
+get_addresses() function input attributes type:
+
 pickup_coordinates = [
     (40.77887344360352, -73.95391845703125),
     (40.73174285888672, -73.98831176757811),
@@ -43,6 +45,7 @@ dropoff_coordinates = [
     (40.69493103027344, -73.9947509765625),
 ]
 
+example of the response returned by the function get_addresses():
 
 response = {'place_id': 25467416,
             'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright',
