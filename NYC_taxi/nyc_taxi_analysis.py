@@ -2,7 +2,6 @@ import pandas as pd
 
 from handler import get_addresses, get_rides_of_the_day
 
-
 pd.set_option("display.max_columns", 30)
 pd.set_option("display.width", 1000)
 
@@ -54,14 +53,23 @@ class NYCTaxiAnalysis:
             end_time="06:00:00",
         )
 
-        return self.morning_rides, self.afternoon_rides, self.evening_rides, self.night_rides
+        return f"The total rides from time period 6:00 a.m.(06:00:00) to 12:00 p.m. (12:00:00) and date period from " \
+               f"{self.date_from} to {self.date_to} is {len(self.morning_rides)}\n" \
+               f"The total rides from time period 12:00 p.m. (12:00:00) to 6:00 p.m. (18:00:00) and date period from " \
+               f"{self.date_from} to {self.date_to} is {len(self.afternoon_rides)}\n" \
+               f"The total rides from time period 6:00 p.m. (18:00:00) to 12 a.m. (00:00:00) and date period from " \
+               f"{self.date_from} to {self.date_to} is {len(self.evening_rides)}\n" \
+               f"The total rides from time period 12:00 a.m. (00:00:00) to 6:00 a.m. (06:00:00) and date period from " \
+               f"{self.date_from} to {self.date_to} is {len(self.night_rides)}"
+
+        # return self.morning_rides, self.afternoon_rides, self.evening_rides, self.night_rides
 
     def pickup_dropoff_addresses(self):
         # This function get all pickup and dropoff addresses by longitude/latitude and add it to dataframe
         self.pickup_coordinates = list(zip(self.data["pickup_latitude"].values,
-                                           self.data["pickup_longitude"].values,))
+                                           self.data["pickup_longitude"].values, ))
         self.dropoff_coordinates = list(zip(self.data["dropoff_latitude"].values,
-                                            self.data["dropoff_longitude"].values,))
+                                            self.data["dropoff_longitude"].values, ))
 
         self.pickup_address, self.dropoff_address = get_addresses(self.pickup_coordinates,
                                                                   self.dropoff_coordinates)
@@ -78,7 +86,7 @@ class NYCTaxiAnalysis:
 if __name__ == "__main__":
     nyc_taxi_analysis = NYCTaxiAnalysis(dataset="../CSV/nyc_taxi_trip_duration.csv",
                                         date_from="2016-01-01",
-                                        date_to="2016-01-30",)
+                                        date_to="2016-01-30", )
 
     # nyc_taxi_analysis.pickup_dropoff_addresses()
     print(nyc_taxi_analysis.rides_of_the_day())
