@@ -4,7 +4,7 @@ import pandas as pd
 from NYC_taxi.nyc_taxi_analysis import NYCTaxiAnalysis
 
 
-class TestGetRidesOfTheDay(unittest.TestCase):
+class TestNYCTaxiAnalysis(unittest.TestCase):
 
     def setUp(self):
         # Create sample dataframe
