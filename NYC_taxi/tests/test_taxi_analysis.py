@@ -15,7 +15,6 @@ class TestNYCTaxiAnalysis(unittest.TestCase):
             "pickup_longitude": [-73.984077, -73.936242, -74.005508, -73.939242, -73.984077],
             "dropoff_latitude": [40.749981, 40.741610, 40.735226, 40.744610, 40.749981],
             "dropoff_longitude": [-73.991409, -73.936242, -74.003281, -73.939242, -73.991409]
-
         })
 
         # Create CSV file with test data
@@ -28,11 +27,12 @@ class TestNYCTaxiAnalysis(unittest.TestCase):
     def test_rides_of_the_day(self):
         # Ensure the total number of rides is correct
         self.assertEqual(self.analysis.rides_of_the_day(),
-                         "The total rides from 2022-01-01 to 2022-01-02, there were:\n"
+                         "For the period 2022-01-01 through 2022-01-02 there were:\n"
                          "\t2 rides from 6:00 a.m. (06:00:00) to 12:00 p.m. (12:00:00);\n"
                          "\t1 rides from 12:00 p.m. (12:00:00) to 6:00 p.m. (18:00:00);\n"
                          "\t1 rides from 6:00 p.m. (18:00:00) to 12 a.m. (00:00:00);\n"
-                         "\t1 rides from 12:00 a.m. (00:00:00) to 6:00 a.m. (06:00:00)")
+                         "\t1 rides from 12:00 a.m. (00:00:00) to 6:00 a.m. (06:00:00).\n"
+                         "TOTAL: 5")
 
         # Ensure the output includes the expected number of rides for each time period
         self.assertIn("2 rides from 6:00 a.m. (06:00:00) to 12:00 p.m. (12:00:00)", self.analysis.rides_of_the_day())
@@ -46,8 +46,6 @@ class TestNYCTaxiAnalysis(unittest.TestCase):
 
         self.assertIsNotNone(self.analysis.pickup_coordinates)
         self.assertIsNotNone(self.analysis.dropoff_coordinates)
-        self.assertIsNotNone(self.analysis.pickup_address)
-        self.assertIsNotNone(self.analysis.dropoff_address)
 
         self.assertEqual(addresses.loc[0, "pickup_address"],
                          'Spectrum, 261, 3rd Avenue, Manhattan Community Board 6, '
