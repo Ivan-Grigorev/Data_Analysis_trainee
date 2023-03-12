@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5806b1da68167f1c61004fff5be4ed27272d5ed81dda92d9ed48bf3b03c9859e"
+            "sha256": "2b27d614c52bc03fc427805044b2adc929e004857d6ae987f306b406b3bb2084"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -403,22 +403,6 @@
             "markers": "python_version >= '3.7'",
             "version": "==1.3.3"
         },
-        "geographiclib": {
-            "hashes": [
-                "sha256:6b7225248e45ff7edcee32becc4e0a1504c606ac5ee163a5656d482e0cd38734",
-                "sha256:f7f41c85dc3e1c2d3d935ec86660dc3b2c848c83e17f9a9e51ba9d5146a15859"
-            ],
-            "markers": "python_version >= '3.7'",
-            "version": "==2.0"
-        },
-        "geopy": {
-            "hashes": [
-                "sha256:228cd53b6eef699b2289d1172e462a90d5057779a10388a7366291812601187f",
-                "sha256:4a29a16d41d8e56ba8e07310802a1cbdf098eeb6069cc3d6d3068fc770629ffc"
-            ],
-            "index": "pypi",
-            "version": "==2.3.0"
-        },
         "html5lib": {
             "hashes": [
                 "sha256:0d78f8fde1c230e99fe37986a60526d7049ed4bf8a9fadbad5f00e22e58e041d",
@@ -763,11 +747,11 @@
         },
         "openai": {
             "hashes": [
-                "sha256:0efa486016283607cb72c23eac346ac739a22613ff4bff101df72a138cb2de60",
-                "sha256:7d4066ea529658a1f1696a8766912b3f3b7139faca860dc530bf102f0b19d42c"
+                "sha256:5869fdfa34b0ec66c39afa22f4a0fb83a135dff81f6505f52834c6ab3113f762",
+                "sha256:6df674cf257e9e0504f1fd191c333d3f6a2442b13218d0eccf06230eb24d320e"
             ],
             "index": "pypi",
-            "version": "==0.27.0"
+            "version": "==0.27.2"
         },
         "packaging": {
             "hashes": [
@@ -1015,11 +999,11 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72",
-                "sha256:75edcdc2f7d85b137124a6c3c9fc3933cdeaa12ecb9a6a959f22797a0feca7e1"
+                "sha256:8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305",
+                "sha256:aa751d169e23c7479ce47a0cb0da579e3ede798f994f5816a74e4f4500dcea42"
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4, 3.5'",
-            "version": "==1.26.14"
+            "version": "==1.26.15"
         },
         "webencodings": {
             "hashes": [

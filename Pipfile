@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 beautifulsoup4 = "*"
 faker = "*"
-geopy = "*"
 html5lib = "*"
 lxml = "*"
 matplotlib = "*"
